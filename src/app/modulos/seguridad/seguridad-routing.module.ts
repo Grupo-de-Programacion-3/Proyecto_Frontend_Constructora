@@ -6,10 +6,10 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
 import { ResetearClaveComponent } from './resetear-clave/resetear-clave.component';
 
 const routes: Routes = [
-  {
-    path: 'iniciar-sesion',
-    component: IniciarSesionComponent
-  },
+   {
+     path: 'iniciar-sesion',
+     component: IniciarSesionComponent
+   },
   {
     path: 'cerrar-sesion',
     component: CerrarSesionComponent
