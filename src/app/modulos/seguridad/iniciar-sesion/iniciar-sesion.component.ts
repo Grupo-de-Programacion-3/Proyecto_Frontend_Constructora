@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import * as crypto from 'crypto-js'
 import { UsuarioModelo } from 'src/app/modelos/usuario.modelo';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
@@ -14,7 +15,8 @@ export class IniciarSesionComponent implements OnInit {
   fgValidador: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService) {
+    private servicioSeguridad: SeguridadService,
+    private router:Router) {
     
 
    }
@@ -22,7 +24,7 @@ export class IniciarSesionComponent implements OnInit {
    ConstruirFormulario(){
      this.fgValidador= this.fb.group({
        usuario: ['geidy.1701810264@ucaldas.edu.co',[Validators.required, Validators.email]],
-       clave: ['', [Validators.required, Validators.min(5)]]
+       clave: ['6TpPhgMJ91', [Validators.required, Validators.min(5)]]
      });
    }
 
@@ -46,10 +48,9 @@ export class IniciarSesionComponent implements OnInit {
       modelo.correo = usuario;
       modelo.clave= claveCifrada;
       this.servicioSeguridad.VerificarUsuario(modelo).subscribe(
-        (datos) => {
-          alert("Datos correctos");
-          console.log(datos);
-
+        (datos: UsuarioModelo) => {
+            this.servicioSeguridad.AlmacenarDatosSesionEnLocal(datos);
+            this.router.navigate(["/inicio"]);
         },
         (error) => {
           alert("Datos invalidos");
