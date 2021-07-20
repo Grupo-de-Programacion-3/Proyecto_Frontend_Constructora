@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InmuebleModelo } from 'src/app/modelos/inmueble.modelo';
+import { InmuebleService } from 'src/app/servicios/inmueble.service';
 
 @Component({
   selector: 'app-listar-inmueble',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarInmuebleComponent implements OnInit {
 
-  constructor() { }
+  pagina: number = 1;
+
+  listaRegistros : InmuebleModelo [] = [];
+
+  constructor(private servicio : InmuebleService) { }
 
   ngOnInit(): void {
+    this.ObtenerListadoInmueble();
+  }
+
+  ObtenerListadoInmueble(){
+    this.servicio.ListarRegistros().subscribe(
+      (datos) =>{
+        this.listaRegistros = datos;
+      },
+      (err) =>{
+        alert("Error cargando el listado de Inmueble");
+      }
+    );
+  }
+
+  CambioPagina(p: number){
+    this.pagina = p;
   }
 
 }

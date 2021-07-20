@@ -1,3 +1,5 @@
+import { UsuarioModule } from "../modulos/usuario/usuario.module";
+
 export class UsuarioModelo{
     id_usuario?: String; 
     documento?: String;

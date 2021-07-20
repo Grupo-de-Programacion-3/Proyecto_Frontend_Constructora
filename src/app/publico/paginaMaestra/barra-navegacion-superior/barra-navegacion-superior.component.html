@@ -3,9 +3,11 @@
       <a routerLink="/" class="brand-logo">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li *ngIf ="isLoggedIn"><a href="sass.html">Sass</a></li>
-    <li *ngIf ="isLoggedIn"><a href="badges.html">Components</a></li>
-    <li *ngIf ="isLoggedIn"><a href="collapsible.html">Javascript</a></li>
+        <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-bloques">Bloque</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-ciudades">Ciudad</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-inmuebles">Inmueble</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-paises">Pais</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-proyectos">Proyecto</a></li>
     <li *ngIf ="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
     <li *ngIf ="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
       </ul>
@@ -13,9 +15,11 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li *ngIf ="isLoggedIn"><a href="sass.html">Sass</a></li>
-    <li *ngIf ="isLoggedIn"><a href="badges.html">Components</a></li>
-    <li *ngIf ="isLoggedIn"><a href="collapsible.html">Javascript</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-bloques">Bloque</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-ciudades">Ciudad</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-inmuebles">Inmueble</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-paises">Pais</a></li>
+    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-proyectos">Proyecto</a></li>
     <li *ngIf ="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
     <li *ngIf ="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
   </ul>
