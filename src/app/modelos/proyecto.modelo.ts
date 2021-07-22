@@ -1,6 +1,6 @@
 
 export class ProyectoModelo{
-    id_proyecto?: Number; 
+    id_proyecto?: number; 
     codigo?: String;
     nombre?: String;
     descripcion?: String;

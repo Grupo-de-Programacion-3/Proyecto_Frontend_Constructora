@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosGenerales } from 'src/app/configuracion/datos.generales';
 import { ProyectoModelo } from 'src/app/modelos/proyecto.modelo';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
 
@@ -10,6 +11,7 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 export class ListarProyectoComponent implements OnInit {
 
   pagina: number = 1;
+  regPorPagina : number = DatosGenerales.numRegistrosPorPagina;
 
   listaRegistros : ProyectoModelo [] = [];
 

@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: 2, currentPage: pagina }">
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: regPorPagina, currentPage: pagina }">
             <th>
                 {{r.id_pais}}
             </th>
@@ -27,9 +27,9 @@
                 {{r.nombre}}
             </th>
             <th>
-                <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-pais/{{r.id_pais}}"><i class="material-icons left">edit</i>Modificar</a>
+                <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-paises/{{r.id_pais}}"><i class="material-icons left">edit</i>Modificar</a>
                 &nbsp;&nbsp;
-                <a class="waves-effect red waves-light btn" routerLink="/parametros/eliminar-pais/{{r.id_pais}}"><i class="material-icons left">delete</i>Eliminar</a>
+                <a class="waves-effect red waves-light btn" routerLink="/parametros/eliminar-paises/{{r.id_pais}}"><i class="material-icons left">delete</i>Eliminar</a>
             </th>
         </tr>
     </tbody>

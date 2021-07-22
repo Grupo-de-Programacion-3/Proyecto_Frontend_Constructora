@@ -24,15 +24,16 @@ export class CiudadService {
     return this.http.get<CiudadModelo[]>(`${this.url}/ciudad`);
   }
 
-  BuscarRegistros(id : number): Observable<CiudadModelo[]>{
-    return this.http.get<CiudadModelo[]>(`${this.url}/ciudad/${id}`);
+  BuscarRegistros(id : number): Observable<CiudadModelo>{
+    return this.http.get<CiudadModelo>(`${this.url}/ciudad/${id}`);
   }
 
   AlmacenarRegistro(modelo: CiudadModelo): Observable<CiudadModelo>{
     return this.http.post<CiudadModelo>(
       `${this.url}/ciudad`, 
     {
-      nombre: modelo.nombre,
+      codigo: modelo.codigo,
+      nombre: modelo.nombre
     },
     {
       headers: new HttpHeaders({
@@ -46,7 +47,8 @@ export class CiudadService {
   return this.http.put<CiudadModelo>(
     `${this.url}/ciudad/${modelo.id_ciudad}`, 
   {
-    nombre: modelo.nombre,
+      codigo: modelo.codigo,
+      nombre: modelo.nombre
   },
   {
     headers: new HttpHeaders({
@@ -56,9 +58,9 @@ export class CiudadService {
 
 }
 
-EliminarRegistro(modelo: CiudadModelo): Observable<CiudadModelo>{
+EliminarRegistro(id : number): Observable<CiudadModelo>{
   return this.http.delete<CiudadModelo>(
-    `${this.url}/ciudad/${modelo.id_ciudad}`, 
+    `${this.url}/ciudad/${id}`, 
   {
     headers: new HttpHeaders({
       "Authorization":`Bearer ${this.token}`

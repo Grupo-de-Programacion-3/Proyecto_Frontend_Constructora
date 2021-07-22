@@ -24,15 +24,16 @@ export class PaisService {
     return this.http.get<PaisModelo[]>(`${this.url}/pais`);
   }
 
-  BuscarRegistros(id : number): Observable<PaisModelo[]>{
-    return this.http.get<PaisModelo[]>(`${this.url}/pais/${id}`);
+  BuscarRegistros(id : number): Observable<PaisModelo>{
+    return this.http.get<PaisModelo>(`${this.url}/pais/${id}`);
   }
 
   AlmacenarRegistro(modelo: PaisModelo): Observable<PaisModelo>{
     return this.http.post<PaisModelo>(
       `${this.url}/pais`, 
     {
-      nombre: modelo.nombre,
+      codigo: modelo.codigo,
+      nombre: modelo.nombre
     },
     {
       headers: new HttpHeaders({
@@ -46,7 +47,8 @@ export class PaisService {
   return this.http.put<PaisModelo>(
     `${this.url}/pais/${modelo.id_pais}`, 
   {
-    nombre: modelo.nombre,
+    codigo: modelo.codigo,
+    nombre: modelo.nombre
   },
   {
     headers: new HttpHeaders({
@@ -56,9 +58,9 @@ export class PaisService {
 
 }
 
-EliminarRegistro(modelo: PaisModelo): Observable<PaisModelo>{
+EliminarRegistro(id : number): Observable<PaisModelo>{
   return this.http.delete<PaisModelo>(
-    `${this.url}/pais/${modelo.id_pais}`, 
+    `${this.url}/pais/${id}`, 
   {
     headers: new HttpHeaders({
       "Authorization":`Bearer ${this.token}`

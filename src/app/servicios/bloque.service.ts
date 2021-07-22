@@ -24,15 +24,18 @@ export class BloqueService {
     return this.http.get<BloqueModelo[]>(`${this.url}/bloque`);
   }
 
-  BuscarRegistros(id : number): Observable<BloqueModelo[]>{
-    return this.http.get<BloqueModelo[]>(`${this.url}/bloque/${id}`);
+  BuscarRegistros(id : number): Observable<BloqueModelo>{
+    return this.http.get<BloqueModelo>(`${this.url}/bloque/${id}`);
   }
 
   AlmacenarRegistro(modelo: BloqueModelo): Observable<BloqueModelo>{
     return this.http.post<BloqueModelo>(
       `${this.url}/bloque`, 
     {
+      codigo: modelo.codigo,
       nombre: modelo.nombre,
+      descripcion: modelo.descripcion
+
     },
     {
       headers: new HttpHeaders({
@@ -46,7 +49,9 @@ export class BloqueService {
   return this.http.put<BloqueModelo>(
     `${this.url}/bloque/${modelo.id_bloque}`, 
   {
-    nombre: modelo.nombre,
+      codigo: modelo.codigo,
+      nombre: modelo.nombre,
+      descripcion: modelo.descripcion
   },
   {
     headers: new HttpHeaders({
@@ -56,9 +61,9 @@ export class BloqueService {
 
 }
 
-EliminarRegistro(modelo: BloqueModelo): Observable<BloqueModelo>{
+EliminarRegistro(id : number): Observable<BloqueModelo>{
   return this.http.delete<BloqueModelo>(
-    `${this.url}/bloque/${modelo.id_bloque}`, 
+    `${this.url}/bloque/${id}`, 
   {
     headers: new HttpHeaders({
       "Authorization":`Bearer ${this.token}`

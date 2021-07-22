@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosGenerales } from 'src/app/configuracion/datos.generales';
 import { InmuebleModelo } from 'src/app/modelos/inmueble.modelo';
 import { InmuebleService } from 'src/app/servicios/inmueble.service';
 
@@ -10,6 +11,7 @@ import { InmuebleService } from 'src/app/servicios/inmueble.service';
 export class ListarInmuebleComponent implements OnInit {
 
   pagina: number = 1;
+  regPorPagina : number = DatosGenerales.numRegistrosPorPagina; 
 
   listaRegistros : InmuebleModelo [] = [];
 

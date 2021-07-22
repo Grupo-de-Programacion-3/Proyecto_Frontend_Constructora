@@ -1,6 +1,6 @@
 
 export class CiudadModelo{
-    id_ciudad?: Number; 
+    id_ciudad?: number; 
     codigo?: String;
     nombre?: String;
 }

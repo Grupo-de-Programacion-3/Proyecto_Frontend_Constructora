@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosGenerales } from 'src/app/configuracion/datos.generales';
 import { CiudadModelo } from 'src/app/modelos/ciudad.modelo';
 import { CiudadService } from 'src/app/servicios/ciudad.service';
 
@@ -10,6 +11,7 @@ import { CiudadService } from 'src/app/servicios/ciudad.service';
 export class ListarCiudadComponent implements OnInit {
   
   pagina: number = 1;
+  regPorPagina : number = DatosGenerales.numRegistrosPorPagina;
 
   listaRegistros : CiudadModelo [] = [];
 

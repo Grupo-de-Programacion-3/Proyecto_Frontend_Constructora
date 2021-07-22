@@ -1,6 +1,6 @@
 
 export class PaisModelo{
-    id_pais?: Number; 
+    id_pais?: number; 
     codigo?: String;
     nombre?: String;
 }

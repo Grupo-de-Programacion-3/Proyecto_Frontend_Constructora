@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: 2, currentPage: pagina }">
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: regPorPagina, currentPage: pagina }">
             <th>
                 {{r.id_inmueble}}
             </th>
@@ -34,9 +34,9 @@
                 {{r.valor}}
             </th>
             <th>
-                <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-inmueble/{{r.id_inmueble}}"><i class="material-icons left">edit</i>Modificar</a>
+                <a class="waves-effect orange waves-light btn" routerLink="/parametros/editar-inmuebles/{{r.id_inmueble}}"><i class="material-icons left">edit</i>Modificar</a>
                 &nbsp;&nbsp;
-                <a class="waves-effect red waves-light btn" routerLink="/parametros/eliminar-bloque/{{r.id_inmueble}}"><i class="material-icons left">delete</i>Eliminar</a>
+                <a class="waves-effect red waves-light btn" routerLink="/parametros/eliminar-inmuebles/{{r.id_inmueble}}"><i class="material-icons left">delete</i>Eliminar</a>
             </th>
         </tr>
     </tbody>

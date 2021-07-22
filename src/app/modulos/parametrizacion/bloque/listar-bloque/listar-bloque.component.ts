@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosGenerales } from 'src/app/configuracion/datos.generales';
 import { BloqueModelo } from 'src/app/modelos/bloque.modelo';
 import { BloqueService } from 'src/app/servicios/bloque.service';
 
@@ -10,6 +11,7 @@ import { BloqueService } from 'src/app/servicios/bloque.service';
 export class ListarBloqueComponent implements OnInit {
 
   pagina: number = 1;
+  regPorPagina : number = DatosGenerales.numRegistrosPorPagina;
 
   listaRegistros : BloqueModelo [] = [];
 
