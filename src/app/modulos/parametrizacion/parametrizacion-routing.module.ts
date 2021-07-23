@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { CrearBloqueComponent } from './bloque/crear-bloque/crear-bloque.component';
 import { EditarBloqueComponent } from './bloque/editar-bloque/editar-bloque.component';
 import { EliminarBloqueComponent } from './bloque/eliminar-bloque/eliminar-bloque.component';
@@ -24,83 +25,122 @@ import { ListarProyectoComponent } from './proyecto/listar-proyecto/listar-proye
 const routes: Routes = [
   {
     path : 'listar-bloques',
-    component : ListarBloqueComponent
+    component : ListarBloqueComponent,
+    canActivate : [ValidadorSesionGuard]
   },
   {
     path : 'crear-bloques',
-    component : CrearBloqueComponent
+    component : CrearBloqueComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'editar-bloques/:id',
-    component : EditarBloqueComponent
+    component : EditarBloqueComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'eliminar-bloques/:id',
-    component : EliminarBloqueComponent
+    component : EliminarBloqueComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'listar-ciudades',
-    component : ListarCiudadComponent
+    component : ListarCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'crear-ciudades',
-    component : CrearCiudadComponent
+    component : CrearCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'editar-ciudades/:id',
-    component : EditarCiudadComponent
+    component : EditarCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'eliminar-ciudades/:id',
-    component : EliminarCiudadComponent
+    component : EliminarCiudadComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'listar-inmuebles',
-    component : ListarInmuebleComponent
+    component : ListarInmuebleComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'crear-inmuebles',
-    component : CrearInmuebleComponent
+    component : CrearInmuebleComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'editar-inmuebles/:id',
-    component : EditarInmuebleComponent
+    component : EditarInmuebleComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'eliminar-inmuebles/:id',
-    component : EliminarInmuebleComponent
+    component : EliminarInmuebleComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'listar-paises',
-    component : ListarPaisComponent
+    component : ListarPaisComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'crear-paises',
-    component : CrearPaisComponent
+    component : CrearPaisComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'editar-paises/:id',
-    component : EditarPaisComponent
+    component : EditarPaisComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'eliminar-paises/:id',
-    component : EliminarPaisComponent
+    component : EliminarPaisComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'listar-proyectos',
-    component : ListarProyectoComponent
+    component : ListarProyectoComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'crear-proyectos',
-    component : CrearProyectoComponent
+    component : CrearProyectoComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'editar-proyectos/:id',
-    component : EditarProyectoComponent
+    component : EditarProyectoComponent,
+    canActivate : [ValidadorSesionGuard]
+
   },
   {
     path : 'eliminar-proyectos/:id',
-    component : EliminarProyectoComponent
+    component : EliminarProyectoComponent,
+    canActivate : [ValidadorSesionGuard]
+
   }
 ];
 
