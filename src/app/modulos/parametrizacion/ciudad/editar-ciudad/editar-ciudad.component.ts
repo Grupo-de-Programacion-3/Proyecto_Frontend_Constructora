@@ -24,7 +24,8 @@ export class EditarCiudadComponent implements OnInit {
      this.fgValidador= this.fb.group({
        id: ['',[Validators.required]],
        codigo: ['',[Validators.required]],
-       nombre: ['',[Validators.required]]
+       nombre: ['',[Validators.required]],
+       paisId: ['',[Validators.required]]
      });
    }
 
@@ -37,7 +38,7 @@ export class EditarCiudadComponent implements OnInit {
   ObtenerRegistroPorId(id : number){
     this.servicio.BuscarRegistros(id).subscribe(
       (datos) =>{
-        this.ObtenerFgValidador.id.setValue(datos.id_ciudad);
+        this.ObtenerFgValidador.id.setValue(datos.paisId);
         this.ObtenerFgValidador.codigo.setValue(datos.codigo);
         this.ObtenerFgValidador.nombre.setValue(datos.nombre);
       },
@@ -59,7 +60,7 @@ export class EditarCiudadComponent implements OnInit {
 
     let modelo : CiudadModelo = new CiudadModelo();
 
-    modelo.id_ciudad = id;
+    modelo.paisId = id;
     modelo.codigo = cod;
     modelo.nombre = nom;
 
