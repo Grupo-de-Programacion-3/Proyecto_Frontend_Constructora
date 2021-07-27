@@ -18,10 +18,10 @@ export class ListarProyectoComponent implements OnInit {
   constructor(private servicio : ProyectoService) { }
 
   ngOnInit(): void {
-    this.ObtenerListadoProyecto();
+    this.ObtenerListado();
   }
 
-  ObtenerListadoProyecto(){
+  ObtenerListado(){
     this.servicio.ListarRegistros().subscribe(
       (datos) =>{
         this.listaRegistros = datos;

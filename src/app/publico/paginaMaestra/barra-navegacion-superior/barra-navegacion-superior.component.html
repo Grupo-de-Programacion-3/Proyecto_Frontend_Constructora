@@ -1,25 +1,25 @@
 <nav>
-    <div class="nav-wrapper">
-      <a routerLink="/" class="brand-logo">Constructions University Inc</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-bloques">Bloque</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-ciudades">Ciudad</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-inmuebles">Inmueble</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-paises">Pais</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-proyectos">Proyecto</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
-    <li *ngIf ="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper">
+    <a routerLink="/" class="brand-logo">Constructions University Inc</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-bloques">Bloque</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-ciudades">Ciudad</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-inmuebles">Inmueble</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-paises">Pais</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-proyectos">Proyecto</a></li>
+      <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-bloques">Bloque</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-ciudades">Ciudad</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-inmuebles">Inmueble</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-paises">Pais</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="parametros/listar-proyectos">Proyecto</a></li>
-    <li *ngIf ="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
-    <li *ngIf ="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
-  </ul>
+<ul class="sidenav" id="mobile-demo">
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-bloques">Bloque</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-ciudades">Ciudad</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-inmuebles">Inmueble</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-paises">Pais</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="parametros/listar-proyectos">Proyecto</a></li>
+  <li *ngIf="isLoggedIn"><a routerLink="seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+  <li *ngIf="!isLoggedIn"><a routerLink="seguridad/iniciar-sesion">Iniciar Sesión</a></li>
+</ul>

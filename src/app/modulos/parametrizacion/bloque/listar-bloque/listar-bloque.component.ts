@@ -18,10 +18,10 @@ export class ListarBloqueComponent implements OnInit {
   constructor(private servicio : BloqueService) { }
 
   ngOnInit(): void {
-    this.ObtenerListadoBloque();
+    this.ObtenerListado();
   }
 
-  ObtenerListadoBloque(){
+  ObtenerListado(){
     this.servicio.ListarRegistros().subscribe(
       (datos) =>{
         this.listaRegistros = datos;

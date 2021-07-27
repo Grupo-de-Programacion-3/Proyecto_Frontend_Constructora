@@ -1,1 +1,78 @@
-<p>listar-cliente works!</p>
+<br />
+<a class="waves-effect waves-light btn" routerLink="/ventas/crear-clientes"><i
+        class="material-icons left">add</i>Agregar</a>
+
+<table class="table responsive-table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Documento
+            </th>
+            <th>
+                Nombres
+            </th>
+            <th>
+                Apellidos
+            </th>
+            <th>
+                Fecha de nacimiento
+            </th>
+            <th>
+                Fotografia
+            </th>
+            <th>
+                Numero de celular
+            </th>
+            <th>
+                Correo
+            </th>
+            <th>
+                Direccion
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: regPorPagina, currentPage: pagina }">
+            <th>
+                {{r.id_cliente}}
+            </th>
+            <th>
+                {{r.documento}}
+            </th>
+            <th>
+                {{r.nombres}}
+            </th>
+            <th>
+                {{r.apellidos}}
+            </th>
+            <th>
+                {{r.fecha_nacimiento}}
+            </th>
+            <th>
+                {{r.fotografia}}
+            </th>
+            <th>
+                {{r.num_celular}}
+            </th>
+            <th>
+                {{r.correo}}
+            </th>
+            <th>
+                {{r.direccion}}
+            </th>
+            <th>
+                <a class="waves-effect orange waves-light btn" routerLink="/ventas/editar-clientes/{{r.id_cliente}}"><i
+                        class="material-icons left">edit</i>Modificar</a>
+                &nbsp;&nbsp;
+                <a class="waves-effect red waves-light btn"
+                    routerLink="/parametros/eliminar-clientes/{{r.id_cliente}}"><i
+                        class="material-icons left">delete</i>Eliminar</a>
+            </th>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="CambioPagina($event)" previousLabel="Anterior" nextLabel="Siguiente">
+</pagination-controls>
