@@ -1,1 +1,48 @@
-<p>listar-solicitud works!</p>
+<br />
+<a class="waves-effect waves-light btn" routerLink="/ventas/crear-solicitudes"><i
+        class="material-icons left">add</i>Agregar</a>
+
+<table class="table responsive-table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Fecha de solicitud
+            </th>
+            <th>
+                Oferta eco separarlo
+            </th>
+            <th>
+                Estado
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: regPorPagina, currentPage: pagina }">
+            <th>
+                {{r.id_solicitud}}
+            </th>
+            <th>
+                {{r.fecha_solicitud}}
+            </th>
+            <th>
+                {{r.oferta_eco_separarlo}}
+            </th>
+            <th>
+                {{r.estado}}
+            </th>
+            <th>
+                <a class="waves-effect orange waves-light btn"
+                    routerLink="/ventas/editar-solicitudes/{{r.id_solicitud}}"><i
+                        class="material-icons left">edit</i>Modificar</a>
+                &nbsp;&nbsp;
+                <a class="waves-effect red waves-light btn" routerLink="/ventas/eliminar-solicitudes/{{r.id_solicitud}}"><i
+                        class="material-icons left">delete</i>Eliminar</a>
+            </th>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="CambioPagina($event)" previousLabel="Anterior" nextLabel="Siguiente">
+</pagination-controls>

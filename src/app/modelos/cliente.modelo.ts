@@ -5,7 +5,7 @@ export class ClienteModelo{
     nombres?: String;
     apellidos?: String;
     fecha_nacimiento?: String;
-    fotografia?: any;
+    fotografia?: String;
     num_celular?: String;
     correo?: string;
     direccion?: string;

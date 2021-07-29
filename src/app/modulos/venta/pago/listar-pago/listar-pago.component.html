@@ -1,1 +1,48 @@
-<p>listar-pago works!</p>
+<br />
+<a class="waves-effect waves-light btn" routerLink="/ventas/crear-pagos"><i
+        class="material-icons left">add</i>Agregar</a>
+
+<table class="table responsive-table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Valor
+            </th>
+            <th>
+                Fecha de pago
+            </th>
+            <th>
+                Comprobante de pago 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: regPorPagina, currentPage: pagina }">
+            <th>
+                {{r.id_pago}}
+            </th>
+            <th>
+                {{r.valor}}
+            </th>
+            <th>
+                {{r.fecha_pago}}
+            </th>
+            <th>
+                {{r.comprobante_pago}}
+            </th>
+            <th>
+                <a class="waves-effect orange waves-light btn"
+                    routerLink="/ventas/editar-pagos/{{r.id_pago}}"><i
+                        class="material-icons left">edit</i>Modificar</a>
+                &nbsp;&nbsp;
+                <a class="waves-effect red waves-light btn" routerLink="/ventas/eliminar-pagos/{{r.id_pago}}"><i
+                        class="material-icons left">delete</i>Eliminar</a>
+            </th>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="CambioPagina($event)" previousLabel="Anterior" nextLabel="Siguiente">
+</pagination-controls>

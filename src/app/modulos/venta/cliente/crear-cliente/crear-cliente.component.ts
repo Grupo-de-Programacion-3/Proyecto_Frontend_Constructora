@@ -11,6 +11,8 @@ import { ClienteService } from 'src/app/servicios/cliente.service';
 })
 export class CrearClienteComponent implements OnInit {
 
+  nombreFotografiaTemp : String = "Sin imagen";
+
   fgValidador: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder,
@@ -26,6 +28,7 @@ export class CrearClienteComponent implements OnInit {
        apellidos: ['',[Validators.required]],
        fecha_nacimiento: ['',[Validators.required]],
        fotografia: ['',[Validators.required]],
+       nombre_fot: ['',[Validators.required]],
        num_celular: ['',[Validators.required]],
        correo: ['',[Validators.required]],
        direccion: ['',[Validators.required]]
@@ -71,4 +74,28 @@ export class CrearClienteComponent implements OnInit {
       }
     )
   }
+
+  CuandoSeleccionanArchivo(event:any){
+    if(event.target.files.length > 0){
+      let archivo = event.target.files[0];
+      this.fgValidador.controls.fotografia.setValue(archivo);
+    }else{
+      console.log("Se ha cancelado la seleccion del archivo");
+    }
+  }
+
+  CargarImagenAlServidor(){
+    let formData = new FormData();
+    formData.append('file', this.fgValidador.controls.fotografia.value);
+    this.servicio.CargarArchivo(formData).subscribe(
+      (datos) =>{
+        this.nombreFotografiaTemp = datos.filename;
+        this.fgValidador.controls.nombre_fot.setValue(datos.filename);
+      },
+      (error) => {
+        alert("Se ha producido un error al cargar el archivo.");
+      }
+    );
+  }
+
 }

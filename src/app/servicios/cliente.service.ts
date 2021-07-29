@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DatosGenerales } from '../configuracion/datos.generales';
 import { ClienteModelo } from '../modelos/cliente.modelo';
+import { FotografiaClienteModelo } from '../modelos/fotografia.cliente.modelo';
 import { SeguridadService } from './seguridad.service';
 
 @Injectable({
@@ -80,5 +81,17 @@ EliminarRegistro(id : number): Observable<ClienteModelo>{
   });
 
 }
+
+CargarArchivo(formData: FormData): Observable<FotografiaClienteModelo> {
+  return this.http.post<FotografiaClienteModelo>(
+    `${this.url}/CargarFotografiaCliente`,
+    formData,
+    {
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${this.token}`
+      })
+    });
+}
+
 
 }

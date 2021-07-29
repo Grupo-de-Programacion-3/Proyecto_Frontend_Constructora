@@ -21,6 +21,7 @@ import { CrearPagoComponent } from './pago/crear-pago/crear-pago.component';
 import { EditarPagoComponent } from './pago/editar-pago/editar-pago.component';
 import { EliminarPagoComponent } from './pago/eliminar-pago/eliminar-pago.component';
 import { ListarPagoComponent } from './pago/listar-pago/listar-pago.component';
+import { DatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ListarPagoComponent } from './pago/listar-pago/listar-pago.component';
     VentaRoutingModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DatepickerModule
   ]
 })
 export class VentaModule { }
