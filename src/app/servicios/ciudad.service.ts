@@ -28,9 +28,13 @@ export class CiudadService {
     return this.http.get<CiudadModelo>(`${this.url}/ciudad/${id}`);
   }
 
-  BuscarRegistrosPorIdPais(paisId : number): Observable<CiudadModelo>{
-    return this.http.get<CiudadModelo>(`${this.url}//pais/${paisId}/ciudads`);
+  BuscarRegistrosPorIdPais(paisId : number): Observable<CiudadModelo[]>{
+    return this.http.get<CiudadModelo[]>(`${this.url}/pais/${paisId}/ciudads`);
   }
+
+ 
+
+  
 
   AlmacenarRegistro(modelo: CiudadModelo): Observable<CiudadModelo>{
     return this.http.post<CiudadModelo>(
@@ -53,7 +57,8 @@ export class CiudadService {
     `${this.url}/ciudad/${modelo.id_ciudad}`, 
   {
       codigo: modelo.codigo,
-      nombre: modelo.nombre
+      nombre: modelo.nombre,
+      paisId: modelo.paisId
   },
   {
     headers: new HttpHeaders({

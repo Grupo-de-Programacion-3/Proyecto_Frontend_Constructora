@@ -4,4 +4,5 @@ export class InmuebleModelo{
     codigo?: String;
     nombre?: String;
     valor?: number;
+    bloqueId?: number;
 }

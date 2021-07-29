@@ -59,7 +59,7 @@ export class EditarPaisComponent implements OnInit {
 
     let modelo : PaisModelo = new PaisModelo();
 
-    modelo.id_pais = id;
+    modelo.id_pais = parseInt(id);
     modelo.codigo = cod;
     modelo.nombre = nom;
 

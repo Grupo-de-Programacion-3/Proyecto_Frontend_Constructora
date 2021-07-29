@@ -34,7 +34,8 @@ export class InmuebleService {
     {
       codigo: modelo.codigo,
       nombre: modelo.nombre,
-      valor: modelo.valor
+      valor: modelo.valor,
+      bloqueId : modelo.bloqueId
     },
     {
       headers: new HttpHeaders({
@@ -50,7 +51,8 @@ export class InmuebleService {
   {
     codigo: modelo.codigo,
     nombre: modelo.nombre,
-    valor: modelo.valor
+    valor: modelo.valor,
+    bloqueId : modelo.bloqueId
   },
   {
     headers: new HttpHeaders({

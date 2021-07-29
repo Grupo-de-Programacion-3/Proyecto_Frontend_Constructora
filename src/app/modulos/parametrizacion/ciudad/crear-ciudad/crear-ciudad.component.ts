@@ -36,15 +36,19 @@ export class CrearCiudadComponent implements OnInit {
 
   ngOnInit(): void {
     this.ConstruirFormulario();
-    this.servicioPaises.ListarRegistros().subscribe(
-      (datos) => {
-        this.listapaises = datos;
-        setTimeout (() =>{
-          IniciarSelect();
-        }, 500)
-
+    this.CargarPaises();
       }
-    );  }
+
+      CargarPaises(){
+        this.servicioPaises.ListarRegistros().subscribe(
+          (datos) => {
+            this.listapaises = datos;
+            setTimeout (() =>{
+              IniciarSelect();
+            }, 500);
+          }
+        );
+      }
 
   get ObtenerFgValidador(){
     return this.fgValidador.controls;
@@ -63,7 +67,7 @@ export class CrearCiudadComponent implements OnInit {
 
     this.servicio.AlmacenarRegistro(modelo).subscribe(
       (datos) => {
-        alert("Registro almacenado correctanente");
+        alert("Registro almacenado correctamente");
         this.router.navigate(["/parametros/listar-ciudades"]);
       },
       (err) => {
