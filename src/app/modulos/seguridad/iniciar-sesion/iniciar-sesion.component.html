@@ -7,7 +7,7 @@
           <form  [formGroup] = "fgValidador" (ngSubmit)="ValidarIdentificacion()" >
             <div class="row">
                 <div class="input-field col s12">
-                  <i class="material-icons prefix">email</i>
+                  <i class="material-icons prefix">Email</i>
                   <input formControlName ="usuario" type= "email" id="email" class="validate" />
                   <label class= "active" for="email">Correo Electrónico</label>
                   <div *ngIf = "ObtenerFgvalidador.usuario.errors && (ObtenerFgvalidador.usuario.dirty || ObtenerFgvalidador.usuario.touched)" class="mensajesValidaciones">
