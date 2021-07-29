@@ -18,10 +18,10 @@ export class ListarInmuebleComponent implements OnInit {
   constructor(private servicio : InmuebleService) { }
 
   ngOnInit(): void {
-    this.ObtenerListadoInmueble();
+    this.ObtenerListado();
   }
 
-  ObtenerListadoInmueble(){
+  ObtenerListado(){
     this.servicio.ListarRegistros().subscribe(
       (datos) =>{
         this.listaRegistros = datos;

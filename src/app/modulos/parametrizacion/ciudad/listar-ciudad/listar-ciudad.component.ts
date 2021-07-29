@@ -18,10 +18,10 @@ export class ListarCiudadComponent implements OnInit {
   constructor(private servicio : CiudadService) { }
 
   ngOnInit(): void {
-    this.ObtenerListadoCiudad();
+    this.ObtenerListado();
   }
 
-  ObtenerListadoCiudad(){
+  ObtenerListado(){
     this.servicio.ListarRegistros().subscribe(
       (datos) =>{
         this.listaRegistros = datos;

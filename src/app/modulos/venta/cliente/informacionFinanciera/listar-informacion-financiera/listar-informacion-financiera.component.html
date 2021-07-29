@@ -1,0 +1,92 @@
+<br />
+
+<a class="waves-effect waves-light btn" routerLink="/ventas/crear-informacionesFinancieras"><i
+        class="material-icons left">add</i>Agregar</a>
+
+<table class="table responsive-table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Documento del cliente
+            </th>
+            <th>
+                Total de ingresos
+            </th>
+            <th>
+                Empresa en la que trabaja
+            </th>
+            <th>
+                Cargo
+            </th>
+            <th>
+                Salario
+            </th>
+            <th>
+                Tiempo que lleva trabajando (Semanas)
+            </th>
+            <th>
+                Numero de referencia familiar
+            </th>
+            <th>
+                Telefono de referencia familiar
+            </th>
+            <th>
+                Numero de referencia personal
+            </th>
+            <th>
+                Telefono de referencia personal
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: regPorPagina, currentPage: pagina }">
+            <th>
+                {{r.id_informacion_financiera}}
+            </th>
+            <th>
+                {{r.documento_cliente}}
+            </th>
+            <th>
+                {{r.total_ingresos}}
+            </th>
+            <th>
+                {{r.empresa_trabaja}}
+            </th>
+            <th>
+                {{r.cargo}}
+            </th>
+            <th>
+                {{r.salario}}
+            </th>
+            <th>
+                {{r.tiempo_trab_actual}}
+            </th>
+            <th>
+                {{r.nom_ref_familiar}}
+            </th>
+            <th>
+                {{r.tel_ref_familiar}}
+            </th>
+            <th>
+                {{r.nom_ref_personal}}
+            </th>
+            <th>
+                {{r.tel_ref_personal}}
+            </th>
+            <th>
+                <a class="waves-effect orange waves-light btn" routerLink="/ventas/editar-informacionesFinancieras/{{r.id_informacion_financiera}}"><i
+                        class="material-icons left">edit</i>Modificar</a>
+                &nbsp;&nbsp;
+                <a class="waves-effect red waves-light btn"
+                    routerLink="/ventas/eliminar-informacionesFinancieras/{{r.id_informacion_financiera}}"><i
+                        class="material-icons left">delete</i>Eliminar</a>
+            </th>
+        </tr>
+        
+    </tbody>
+</table>
+<pagination-controls (pageChange)="CambioPagina($event)" previousLabel="Anterior" nextLabel="Siguiente">
+</pagination-controls>
