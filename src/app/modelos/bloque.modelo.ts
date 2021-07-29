@@ -4,4 +4,5 @@ export class BloqueModelo{
     codigo?: String;
     nombre?: String;
     descripcion?: String;
+    proyectoId?:number;
 }

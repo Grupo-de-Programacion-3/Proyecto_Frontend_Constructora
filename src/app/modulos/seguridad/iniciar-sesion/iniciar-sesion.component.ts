@@ -4,6 +4,13 @@ import { Router } from '@angular/router';
 import * as crypto from 'crypto-js'
 import { UsuarioModelo } from 'src/app/modelos/usuario.modelo';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+
+
+export interface formModel {
+  captcha?:string;
+}
+
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -12,7 +19,10 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 })
 export class IniciarSesionComponent implements OnInit {
 
+  public formModel: formModel = {};
+
   fgValidador: FormGroup = new FormGroup({});
+  
 
   constructor(private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
@@ -20,6 +30,7 @@ export class IniciarSesionComponent implements OnInit {
     
 
    }
+   
 
    ConstruirFormulario(){
      this.fgValidador= this.fb.group({

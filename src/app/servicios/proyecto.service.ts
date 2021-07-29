@@ -27,6 +27,13 @@ export class ProyectoService {
   BuscarRegistros(id: number): Observable<ProyectoModelo> {
     return this.http.get<ProyectoModelo>(`${this.url}/proyecto/${id}`);
   }
+  //revisar
+  BuscarRegistrosPorIdciudad(ciudadId: number): Observable<ProyectoModelo[]> {
+    return this.http.get<ProyectoModelo[]>(`${this.url}/proyecto/${ciudadId}`);
+  }
+  BuscarRegistrosProyectoPorIdciudad(ciudadId : number): Observable<ProyectoModelo[]>{
+    return this.http.get<ProyectoModelo[]>(`${this.url}/ciudads/${ciudadId}/proyectos`);
+  }
 
   AlmacenarRegistro(modelo: ProyectoModelo): Observable<ProyectoModelo> {
     return this.http.post<ProyectoModelo>(
@@ -34,7 +41,9 @@ export class ProyectoService {
       {
         codigo: modelo.codigo,
         nombre: modelo.nombre,
-        descripcion: modelo.descripcion
+        descripcion: modelo.descripcion,
+        ciudadId:modelo.ciudadId
+
       },
       {
         headers: new HttpHeaders({
@@ -50,7 +59,9 @@ export class ProyectoService {
       {
         codigo: modelo.codigo,
         nombre: modelo.nombre,
-        descripcion: modelo.descripcion
+        descripcion: modelo.descripcion,
+        ciudadId:modelo.ciudadId
+
       },
       {
         headers: new HttpHeaders({

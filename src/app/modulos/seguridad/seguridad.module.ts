@@ -7,6 +7,8 @@ import { ResetearClaveComponent } from './resetear-clave/resetear-clave.componen
 import { CambiarClaveComponent } from './cambiar-clave/cambiar-clave.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
+
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
     CommonModule,
     SeguridadRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaFormsModule,
+    RecaptchaModule,
 
   ]
 })

@@ -4,4 +4,5 @@ export class ProyectoModelo{
     codigo?: String;
     nombre?: String;
     descripcion?: String;
+    ciudadId?: number;
 }
