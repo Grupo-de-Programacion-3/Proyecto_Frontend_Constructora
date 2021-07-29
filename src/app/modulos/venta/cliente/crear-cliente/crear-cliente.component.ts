@@ -27,7 +27,7 @@ export class CrearClienteComponent implements OnInit {
        nombres: ['',[Validators.required]],
        apellidos: ['',[Validators.required]],
        fecha_nacimiento: ['',[Validators.required]],
-       fotografia: ['',[Validators.required]],
+       fotografia: ['',[]],
        nombre_fot: ['',[Validators.required]],
        num_celular: ['',[Validators.required]],
        correo: ['',[Validators.required]],
@@ -48,7 +48,7 @@ export class CrearClienteComponent implements OnInit {
     let nom = this.ObtenerFgValidador.nombres.value;
     let ape = this.ObtenerFgValidador.apellidos.value;
     let f_n = this.ObtenerFgValidador.fecha_nacimiento.value;
-    let fot = this.ObtenerFgValidador.fotografia.value;
+    let fot = this.nombreFotografiaTemp;
     let n_c = this.ObtenerFgValidador.num_celular.value;
     let cor = this.ObtenerFgValidador.correo.value;
     let dir = this.ObtenerFgValidador.direccion.value;
